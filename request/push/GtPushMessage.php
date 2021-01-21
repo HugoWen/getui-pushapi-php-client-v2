@@ -1,5 +1,5 @@
 <?php
-require_once(dirname(__FILE__) . '/' . 'GTRevoke.php');
+require_once(dirname(__FILE__) . '/' . 'GtRevoke.php');
 require_once(dirname(__FILE__) . '/' . 'GtNotification.php');
 
 class GtPushMessage extends GtApiRequest

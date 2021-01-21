@@ -1,6 +1,6 @@
 <?php
 
-require_once(dirname(__FILE__) . '/' . 'ios/GTIos.php');
+require_once(dirname(__FILE__) . '/' . 'ios/GtIos.php');
 require_once(dirname(__FILE__) . '/' . 'android/GtAndroid.php');
 
 class GtPushChannel extends GtApiRequest
