@@ -90,7 +90,7 @@ class GtClient
         }
         //鉴权
         try {
-            $this->auth();
+            $this->auth($appkey, $masterSecret);
         } catch (Exception $e) {
             echo  $e->getMessage();
         }
@@ -137,12 +137,12 @@ class GtClient
         return $this->appId;
     }
 
-    public function auth()
+    public function auth($app_key, $ms)
     {
         $auth = new GtAuthRequest();
-        $auth->setAppkey(APPKEY);
+        $auth->setAppkey($app_key);
         $timeStamp = $this->getMicroTime();
-        $sign = hash("sha256", APPKEY . $timeStamp . MS);
+        $sign = hash("sha256", $app_key . $timeStamp . $ms);
         $auth->setSign($sign);
         $auth->setTimestamp($timeStamp);
         $rep = $this->userApi()->auth($auth);
